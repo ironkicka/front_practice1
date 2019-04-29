@@ -1,5 +1,7 @@
 @import url(sanitize.css);
-
+body{
+    background-color: #fafafa;
+}
 h1 {
     font-size: 24px;
     margin: 0px;
@@ -39,4 +41,13 @@ button{
 label{
     display:block;
     margin-bottom:.5em;
+}
+
+.required{
+    color:#f33;
+    font-size:.7em;
+    background-color: #fee;
+    padding: 3px;
+    font-weight:bold;
+    margin-right:.3em;
 }
