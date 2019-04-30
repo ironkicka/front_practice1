@@ -1,8 +1,49 @@
 @import url(sanitize.css);
 body{
-    background-color: #fafafa;
+    background-color: #f0f0f0;
+    padding:10px;
+    font-size: 14px;
+    color:#666;
 }
-h1 {
-    font-size: 24px;
-    margin: 0px;
+
+.container{
+    width:800px;
+    margin:0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,.3)
+}
+header{
+    background-color: #422814;
+    padding:10px;
+    color: #fff;
+
+}
+
+header h1 {
+    margin: 0;
+    font-size:24px;
+    font-weight:normal;
+    text-align:center;
+}
+
+.description img{
+    float:left;
+    margin: 0 10px 10px 0;
+
+}
+
+.information h1{
+    font-size:18px;
+    margin: 0 10px 10px 0;
+    float:left;
+}
+
+.information .type{
+    display:inline;
+    background-color: #e35a4d;
+    padding:3px 5px;
+    font-size:.8em;
+    color:#fff;
+}
+.description{
+    clear:left;
 }
