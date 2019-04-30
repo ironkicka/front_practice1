@@ -95,6 +95,8 @@ footer{
 .description img{
         float:left;
         margin:0 10px 10px 0;
+        transition:opacity 1s ease 0s;
+        
 }
 
 @media only screen and(max-width:600px){
@@ -118,5 +120,10 @@ footer{
         float:none;
         width:inherit;
     }
+
+}
+
+.description img:hover{
+    opacity: .5;
 
 }
