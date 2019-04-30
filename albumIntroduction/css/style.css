@@ -1,4 +1,6 @@
 @import url(sanitize.css);
+@import url('https://fonts.googleapis.com/css?family=Sriracha');
+
 body{
     background-color: #f0f0f0;
     padding:10px;
@@ -23,6 +25,7 @@ header h1 {
     font-size:24px;
     font-weight:normal;
     text-align:center;
+    font-family: 'Sriracha', cursive;
 }
 
 .description img{
@@ -46,6 +49,7 @@ header h1 {
 }
 .description{
     clear:left;
+    font-family: sans-serif;
 }
 .content{
     background-color:  #fff;
