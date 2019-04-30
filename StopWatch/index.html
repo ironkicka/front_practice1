@@ -27,30 +27,36 @@
         </div>
 
         <script>
+            var start;
+            document.getElementById("start_stop").addEventListener("click", function () {
+                start = new Date();
+                setInterval(goTimer, 10);
+
+
+            });
+
             var addZero = function (value) {
                 if (value < 10) {
                     value = '0' + value;
                 }
                 return value;
             }
+            var goTimer = function () {
+                var now = new Date();
+                var milli = now.getTime() - start.getTime();
+                var seconds = Math.floor(milli / 1000);
+                var minutes = Math.floor(seconds / 60);
+                var hours = Math.floor(minutes / 60);
 
-            document.getElementById("start_stop").addEventListener("click",
-                function () {
-                    var now = new Date();
-                    var seconds = now.getSeconds();
-                    seconds = addZero(seconds);
+                seconds = seconds - minutes * 60;
+                minutes = minutes - hours * 60;
 
-                    var minutes = now.getMinutes();
+                hours = addZero(hours);
+                minutes = addZero(minutes);
+                seconds = addZero(seconds);
 
-                    minutes = addZero(minutes);
-
-                    var hours = now.getHours();
-
-                    hours = addZero(hours);
-
-                    document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
-
-                });
+                document.getElementById("timer").innerHTML = hours + ':' + minutes + ':' + seconds;
+            }
 
         </script>
 
