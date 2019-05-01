@@ -23,8 +23,15 @@
         </div>
         <script src="js/jquery.min.js"> </script>
         <script>
-            $('#img_unit').html('ここに，画像リストが表示されます．').css('margin-top', '100px');
+            $.getJSON('https://h2o-space.com//htmlbook/images.php', function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $('<div class="photo"</div>')
+                        .append('<img src="' + data[i].path + '">')
+                        .append('<div class="inner"<p>' + data[i].caption + '<span>' + data[i].name + '</span></p></div>')
+                        .appendTo('#img_unit');
 
+                }
+            });
         </script>
     </body>
 
