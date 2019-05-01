@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>My Photos</title>
+
+    </head>
+
+    <body>
+        <header>
+            <h1>My Photos</h1>
+        </header>
+
+        <div class="container">
+            <div id="img_unit">
+                <div class="photo" v-for="Photo in Photos">
+                    <img :src="Photo.path">
+                    <div class="inner">
+                        <p>{{Photo.caption}}<span>{{Photo.name}}</span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="js/jquery.min.js"> </script>
+        <!-- 本番バージョン、サイズと速度のために最適化されています -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script>
+
+            var app = new Vue({
+                el: '#img_unit',
+                data: {
+                    Photos: []
+                },
+                created: function () {
+                    var self = this;
+                    $.getJSON('https://h2o-space.com//htmlbook/images.php', function (data) {
+                        self.Photos = data;
+                    });
+
+                }
+            });
+
+        </script>
+    </body>
+
+</html>
